@@ -59,33 +59,6 @@ ko.bindingHandlers.toggleWizardSection = {
     }
 };
 
-ko.bindingHandlers.renderJobs = {
-    update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
-        var value = valueAccessor();
-        var template = allBindings.get('template');
-        var duration = allBindings.get('duration') || 400;
-
-        var placeholderToHide = $(element).find('.placeholder');
-
-        var placeholderToShow = document.createElement("div");
-        placeholderToShow.className = 'placeholder';
-        $(element).append(placeholderToShow);
-
-        if (placeholderToHide[0] !== undefined) {
-            ko.cleanNode(placeholderToHide);
-            $(placeholderToShow).hide();
-            $(placeholderToHide).hide(duration,
-                function () {
-                    $(placeholderToHide).remove();
-                });
-        }
-
-        ko.renderTemplate(template, value, {}, placeholderToShow, 'replaceChildren');
-
-        $(placeholderToShow).show(duration);
-    }
-};
-
 var viewModel = new BindingsViewModel();
 
 ko.applyBindings(viewModel);

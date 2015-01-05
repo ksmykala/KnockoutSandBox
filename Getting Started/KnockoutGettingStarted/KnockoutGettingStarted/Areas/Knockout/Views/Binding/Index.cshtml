@@ -1,7 +1,16 @@
-﻿@model dynamic
-
-@{
-    ViewBag.Title = "title";
+﻿@{
+    ViewBag.Title = "Bindings";
 }
 
 <h2>Binding</h2>
+
+<div data-bind="text: plainText"></div>
+
+<div>
+    <select data-bind="options: companies.available, optionsText: 'name', value: selected, optionsCaption: 'Choose...'"></select>
+</div>
+
+@section scripts
+{
+    <script src="/Areas/Knockout/Scripts/bindings.js"></script>
+}

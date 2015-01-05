@@ -28,6 +28,10 @@ namespace KnockoutGettingStarted
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
+            bundles.Add(new StyleBundle("~/Content/knockoutCss").Include(
+                "~/Content/site.css",
+                "~/Areas/Knockout/Content/main.css"));
+
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
                         "~/Content/themes/base/jquery.ui.resizable.css",

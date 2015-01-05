@@ -3,15 +3,25 @@
 }
 
 <h2>Binding</h2>
+<div class="section">
+    <div>
+        <h3>Plain text binding:</h3>
+        <div data-bind="text: plainText"></div>
+    </div>
 
-<div data-bind="text: plainText"></div>
+    <div>
+        <h3>Options binding - select your company:</h3>
+        <div>
+            <select data-bind="options: availableCompanies, optionsText: 'name', value: selectedCompany, optionsCaption: 'Choose...'"></select>
+        </div>
+    </div>
 
-<div>
-    <select data-bind="options: availableCompanies, optionsText: 'name', value: selectedCompany, optionsCaption: 'Choose...'"></select>
-</div>
-
-<div data-bind="visible: selectedCompany()">
-    Select your job position
+    <div>
+        <h3>Custom binding handler - <span title="choose your company first">select your job*</span>:</h3>
+        <div data-bind="toggleWizardSection: selectedCompany">
+            Select your job position
+        </div>
+    </div>
 </div>
 
 @section scripts

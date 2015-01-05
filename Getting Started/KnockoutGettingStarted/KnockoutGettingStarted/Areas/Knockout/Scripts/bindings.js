@@ -19,7 +19,8 @@ var BindingsViewModel = function () {
     self.availableCompanies = ko.observableArray([
         new Company(0, "Google", [new Job("QA", 1999.99), new Job("Developer", 2000), new Job("CEO", 1.99^10)]),
         new Company(1, "Yahoo", [new Job("Architect", 2000), new Job("PM", 10124)]),
-        new Company(2, "NoNameCompany", [new Job("Tester", 666.666), new Job("Awesome driver", 2500), new Job("Nobody", 9999)])
+        new Company(2, "NoName Company", [new Job("Tester", 666.666), new Job("Awesome driver", 2500), new Job("Nobody", 9999)]),
+        new Company(3, "Company Without Jobs")
     ]);
 
     self.selectedCompany = ko.observable(0);

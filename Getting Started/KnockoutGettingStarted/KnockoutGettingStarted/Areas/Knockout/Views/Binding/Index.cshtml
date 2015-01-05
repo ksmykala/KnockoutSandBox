@@ -19,6 +19,7 @@
     <div>
         <h3>Custom binding handler with template - <span title="choose your company first">select your job*</span>:</h3>
         <div data-bind="toggleWizardSection: selectedCompany">
+            <h3><span class="label label-success">Available jobs</span></h3>
             <div data-bind="foreach: getJobsInSelectedCompany()">
                 <div data-bind="renderJobs: $data, template: 'job-template'"></div>
             </div>

@@ -12,19 +12,25 @@
     <div>
         <h3>Options binding - select your company:</h3>
         <div>
-            <select data-bind="options: availableCompanies, optionsText: 'name', value: selectedCompany, optionsCaption: 'Choose...'"></select>
+            <select data-bind="options: availableCompanies, optionsValue: 'index', optionsText: 'name', value: selectedCompany, optionsCaption: 'Choose...'"></select>
         </div>
     </div>
 
     <div>
-        <h3>Custom binding handler - <span title="choose your company first">select your job*</span>:</h3>
+        <h3>Custom binding handler with template - <span title="choose your company first">select your job*</span>:</h3>
         <div data-bind="toggleWizardSection: selectedCompany">
-            Select your job position
+            <div data-bind="foreach: getJobsInSelectedCompany()">
+                <div data-bind="renderJobs: $data, template: 'job-template'"></div>
+            </div>
+            <script type="text/html" id="job-template">
+                <span data-bind="text: name"></span>
+            </script>
         </div>
-    </div>
+</div>
 </div>
 
 @section scripts
 {
     <script src="/Areas/Knockout/Scripts/bindings.js"></script>
+    <script src="/Areas/Knockout/Scripts/bindingHandlers.js"></script>
 }

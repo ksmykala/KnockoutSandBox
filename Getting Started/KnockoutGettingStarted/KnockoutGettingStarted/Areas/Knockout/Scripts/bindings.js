@@ -10,14 +10,13 @@ var BindingsViewModel = function () {
 
     self.plainText = "Plain Text";
 
-    self.companies = {
-        available: ko.observableArray([
-            new Company(0, "Future Processing"),
-            new Company(1, "Sii"),
-            new Company(2, "BI-Technologies")
-        ]),
-        selected: ko.observable()
-    };
+    self.availableCompanies = ko.observableArray([
+        new Company(0, "Future Processing"),
+        new Company(1, "Sii"),
+        new Company(2, "BI-Technologies")
+    ]);
+
+    self.selectedCompany = ko.observable(0);
 
 }
 

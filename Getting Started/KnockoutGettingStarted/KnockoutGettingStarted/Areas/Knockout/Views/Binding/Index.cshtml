@@ -7,7 +7,11 @@
 <div data-bind="text: plainText"></div>
 
 <div>
-    <select data-bind="options: companies.available, optionsText: 'name', value: selected, optionsCaption: 'Choose...'"></select>
+    <select data-bind="options: availableCompanies, optionsText: 'name', value: selectedCompany, optionsCaption: 'Choose...'"></select>
+</div>
+
+<div data-bind="visible: selectedCompany()">
+    Select your job position
 </div>
 
 @section scripts

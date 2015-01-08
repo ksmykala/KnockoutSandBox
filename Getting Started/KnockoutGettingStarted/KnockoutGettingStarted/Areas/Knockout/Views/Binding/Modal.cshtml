@@ -1,0 +1,65 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Modal";
+}
+
+<!-- Button trigger modal -->
+<div class="container">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel panel-heading">
+                Modal with wizard steps
+            </div>
+            <div class="panel panel-body">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Launch demo modal
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div></div>
+                <div class="panel panel-success" data-bind="visible: steps[0].IsVisible">
+                    <div class="panel-heading"><span class="h4">Panel One</span></div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet est magni non omnis maiores? Eum quibusdam inventore consequuntur iusto est fugiat nam deleniti totam voluptatum ipsa earum harum odit ut!</p>
+                    </div>
+                </div>
+
+                <div class="panel panel-warning" data-bind="visible: steps[1].IsVisible">
+                    <div class="panel-heading"><span class="h4">Panel Two</span></div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sequi impedit reiciendis tempora saepe deserunt iste molestias quidem illum minus nihil maiores sunt quae enim vitae quia expedita. Minima sit.</p>
+                    </div>
+                </div>
+
+                <div class="panel panel-danger" data-bind="visible: steps[2].IsVisible">
+                    <div class="panel-heading"><span class="h4">Panel Three</span></div>
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae alias commodi ea itaque nostrum soluta aspernatur reprehenderit qui natus odio corporis voluptate tempora officiis optio doloremque eius ducimus voluptatem repellat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bind="enable: canGoFwd, click: nextStep">Next step<span class="glyphicon glyphicon-chevron-right"></span></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="/Areas/Knockout/Scripts/modal.js"></script>
+}

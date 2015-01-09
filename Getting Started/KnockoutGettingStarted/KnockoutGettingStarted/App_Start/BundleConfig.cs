@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace KnockoutGettingStarted
 {
@@ -19,7 +18,8 @@ namespace KnockoutGettingStarted
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                        "~/Scripts/knockout-{version}.js"));
+                        "~/Scripts/knockout-{version}.js",
+                        "~/Scripts/bootstrap.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -27,6 +27,12 @@ namespace KnockoutGettingStarted
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/knockoutCss").Include(
+                "~/Content/site.css",
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-theme.css",
+                "~/Areas/Knockout/Content/main.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

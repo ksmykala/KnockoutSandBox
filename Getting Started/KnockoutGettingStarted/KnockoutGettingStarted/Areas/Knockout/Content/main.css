@@ -1,0 +1,13 @@
+﻿.section > div{
+    margin: 1em;
+}
+
+.jobs-container {
+    
+}
+
+.job {
+    width: 100px;
+    height: 100px;
+    background-color: yellowgreen;
+}

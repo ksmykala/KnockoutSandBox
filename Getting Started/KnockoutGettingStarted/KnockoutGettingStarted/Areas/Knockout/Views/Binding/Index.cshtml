@@ -1,7 +1,36 @@
-﻿@model dynamic
-
-@{
-    ViewBag.Title = "title";
+﻿@{
+    ViewBag.Title = "Bindings";
 }
 
 <h2>Binding</h2>
+<div class="section">
+    <div>
+        <h3>Plain text binding:</h3>
+        <div data-bind="text: plainText"></div>
+    </div>
+
+    <div>
+        <h3>Options binding - select your company:</h3>
+        <div>
+            <select data-bind="options: availableCompanies, optionsValue: 'index', optionsText: 'name', value: selectedCompany, optionsCaption: 'Choose...'"></select>
+        </div>
+    </div>
+
+    <div>
+        <h3>Custom binding handler with template - <span title="choose your company first">select your job*</span>:</h3>
+        <div class="col-lg-12" data-bind="toggleWizardSection: selectedCompany">
+            <h3><span class="label label-success">Available jobs (<span data-bind="text: getJobsInSelectedCompany() !== undefined ? getJobsInSelectedCompany().length : 0"></span>)</span></h3>
+            <div class="jobs-container well well-lg" data-bind="template: { foreach: getJobsInSelectedCompany(), beforeRemove: hidePlanetElement, afterAdd: showPlanetElement }">
+                <div class="btn btn-primary">
+                    <span data-bind="text: name"></span>
+                    <span>$ <span data-bind="text: salary"></span></span>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+@section scripts
+{
+    <script src="/Areas/Knockout/Scripts/bindings.js"></script>
+}

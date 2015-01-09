@@ -9,20 +9,35 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+
     <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">@Html.ActionLink("Knockout Examples", "Index", "Home")</p>
-            </div>
-            <div class="float-right">
-                <section id="login">
-                    @Html.Partial("_LoginPartial")
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Knockout", "Index", "Knockout", new { area = "Knockout" }, null)</li>
-                        <li>@Html.ActionLink("Bindings", "Index", "Binding", new { area = "Knockout" }, null)</li>
-                    </ul>
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            @Html.ActionLink("Knockout Examples", "Index", "Home", null, new { @class = "navbar-brand" })
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Knockout", "Index", "Knockout", new { area = "Knockout" }, null)</li>
+                                <li class="dropdown open">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Bindings <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>@Html.ActionLink("Bindings", "Index", "Binding", new { area = "Knockout" }, null)</li>
+                                        <li>@Html.ActionLink("Modal", "Modal", "Binding", new { area = "Knockout" }, null)</li>
+                                        <li>@Html.ActionLink("When you are bored", "WhenYouAreBored", "Binding", new { area = "Knockout" }, null)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>

@@ -30,6 +30,7 @@ namespace KnockoutGettingStarted
 
             bundles.Add(new StyleBundle("~/Content/knockoutCss").Include(
                 "~/Content/site.css",
+                "~/Content/carousel.css",
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-theme.css",
                 "~/Areas/Knockout/Content/main.css"));

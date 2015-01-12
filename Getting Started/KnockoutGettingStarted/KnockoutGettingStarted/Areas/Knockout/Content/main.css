@@ -2,12 +2,21 @@
     margin: 1em;
 }
 
-.jobs-container {
-    
-}
-
 .job {
     width: 100px;
     height: 100px;
     background-color: yellowgreen;
+}
+
+.content {
+    padding: 2em;
+    min-height: 500px;
+}
+
+#navbar > ul > li > a {
+    color: whitesmoke;
+}
+
+#navbar > ul > li > a:hover {
+    color: orangered;
 }

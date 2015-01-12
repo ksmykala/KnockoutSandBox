@@ -6,7 +6,7 @@ namespace KnockoutGettingStarted.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Index", "Binding", new { area = "Knockout" });
+            return RedirectToAction("WhenYouAreBored", "Binding", new { area = "Knockout" });
         }
 
         public ActionResult About()

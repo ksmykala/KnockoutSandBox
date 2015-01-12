@@ -4,21 +4,19 @@
     ViewBag.Title = "When You Are Bored";
 }
 
-<div class="container">
-    <h2>When You Are Bored</h2>
-    <div class="col-lg-12">
-        <button class="btn btn-danger" data-bind="click: function () { getRandomEvent() }">GET SOME ACTIVITY <span class="glyphicon glyphicon-chevron-right"></span></button>
-    </div>
-    <div class="col-lg-12" data-bind="visible: selectedAgainstBoringItem()" style="margin-top: 2em;">
-        <div class="panel panel-primary">
-            <div class="panel panel-heading">
-                <h2 data-bind="text: selectedAgainstBoringItem"></h2>
-            </div>
-            <div class="panel panel-body">
-                <ul data-bind="foreach: previousItems">
-                    <li><span data-bind="text: content"></span> - <strong  data-bind="text: count"></strong></li>
-                </ul>
-            </div>
+<h2>When You Are Bored</h2>
+<div class="col-lg-12">
+    <button class="btn btn-danger" data-bind="click: function () { getRandomEvent() }">GET SOME ACTIVITY <span class="glyphicon glyphicon-chevron-right"></span></button>
+</div>
+<div class="col-lg-12" data-bind="visible: selectedAgainstBoringItem()" style="margin-top: 2em;">
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">
+            <h2 data-bind="text: selectedAgainstBoringItem"></h2>
+        </div>
+        <div class="panel panel-body">
+            <ul data-bind="foreach: previousItems">
+                <li><span data-bind="text: content"></span>- <strong data-bind="    text: count"></strong></li>
+            </ul>
         </div>
     </div>
 </div>
